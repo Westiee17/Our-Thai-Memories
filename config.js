@@ -1,6 +1,5 @@
-// Project URL: https://YOUR-PROJECT-ID.supabase.co   (Project ID is in Project Settings -> General)
-// Key: the "Publishable key" (starts with sb_publishable_) or the legacy "anon" key (starts with eyJ)
+// Supabase connection details (the publishable key is safe to be public)
 window.TRIP_CONFIG = {
-  url: 'https://YOUR-PROJECT-ID.supabase.co',
-  key: 'YOUR-PUBLISHABLE-KEY'
+  url: 'https://wofnimdykjxqaitelmeh.supabase.co',
+  key: 'sb_publishable_Zmsh-YlgzEuJxNuqgPQqFQ_4aEOGMn6'
 };
