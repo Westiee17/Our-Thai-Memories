@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thailand Trip Scrapbook 2026</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600;700&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#fff8f3;--ink:#4a3b52;--soft:#8a7894;--card:#fffdfb;--gold:#e0a85a;
+--c1:#ffd9e2;--c2:#d6f2e5;--c3:#e6dcf8;--c4:#fff1c4;--c5:#ffdfc8;--c6:#d5e9f8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#231b2a;--ink:#f4e9f6;--soft:#b5a3bf;--card:#33283c;--gold:#e8b86d;
+--c1:#5b3446;--c2:#2f5143;--c3:#443a63;--c4:#5c5230;--c5:#5e4331;--c6:#2f4a62;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#231b2a;--ink:#f4e9f6;--soft:#b5a3bf;--card:#33283c;--gold:#e8b86d;--c1:#5b3446;--c2:#2f5143;--c3:#443a63;--c4:#5c5230;--c5:#5e4331;--c6:#2f4a62;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Mali','Segoe UI',system-ui,sans-serif;line-height:1.45}
+.hero{text-align:center;padding:28px 18px 10px;background:linear-gradient(180deg,var(--c1),var(--c3) 60%,var(--bg));border-radius:0 0 40px 40px}
+.hero svg{width:120px;height:auto;display:block;margin:0 auto -2px}
+.hero .th{font-size:15px;letter-spacing:.08em;color:var(--soft)}
+.hero h1{margin:2px 0 4px;font-size:clamp(26px,7vw,40px);line-height:1.15}
+.hero p{margin:2px 0;font-size:14px;color:var(--soft)}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0 4px}
+.chip{background:var(--card);border-radius:99px;padding:4px 12px;font-size:13px;box-shadow:0 2px 0 rgba(0,0,0,.06)}
+.lotus{letter-spacing:.4em;font-size:14px;margin-top:6px}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:calc(env(safe-area-inset-top,0px) + 8px) 12px 8px;background:var(--bg);scrollbar-width:none}
+nav button{flex:none;border:0;border-radius:99px;padding:6px 14px;font:inherit;font-size:13px;color:var(--ink);cursor:pointer}
+.banner{margin:10px 14px;padding:10px 14px;border-radius:16px;background:var(--c4);font-size:13px;text-align:center}
+main{max-width:760px;margin:0 auto;padding:6px 14px 40px}
+.day{margin:22px 0 34px;border-radius:28px;padding:16px 12px 8px;background:var(--dc)}
+.dh{display:flex;align-items:center;gap:10px;margin:0 4px 12px}
+.dn{flex:none;width:52px;height:52px;border-radius:50%;background:var(--card);display:grid;place-content:center;text-align:center;font-weight:700;line-height:1;box-shadow:0 2px 0 rgba(0,0,0,.08)}
+.dn small{font-size:9px;font-weight:400;color:var(--soft);letter-spacing:.1em}.dn b{font-size:20px}
+.dh h2{margin:0;font-size:18px;line-height:1.2}.dh p{margin:0;font-size:12px;color:var(--soft)}
+.place{position:relative;background:var(--card);border-radius:20px;padding:14px 12px 12px;margin:16px 0;box-shadow:0 3px 10px rgba(80,50,90,.09)}
+.place::before{content:"";position:absolute;top:-9px;left:24px;width:70px;height:18px;background:var(--dc);opacity:.95;transform:rotate(-3deg);border-radius:3px}
+.ph{display:flex;gap:10px;align-items:flex-start}
+.pe{font-size:26px;line-height:1}
+.ph h3{margin:0;font-size:16px;line-height:1.25}.ph p{margin:1px 0 0;font-size:12px;color:var(--soft)}
+.opt{margin-left:auto;flex:none;font-size:11px;background:var(--c4);border-radius:99px;padding:2px 9px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:12px;margin:12px 2px 6px}
+.empty{grid-column:1/-1;text-align:center;font-size:13px;color:var(--soft);padding:10px 0}
+.tile{position:relative;background:#fff;border-radius:6px;padding:5px 5px 4px;box-shadow:0 2px 6px rgba(0,0,0,.15);transform:rotate(var(--r));cursor:pointer;color:#5a4a62}
+.tile .m{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:3px;background:#eee}
+.tile .by{display:block;font-size:10px;text-align:center;padding-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:16px}
+.tile .play{position:absolute;top:calc(50% - 22px);left:calc(50% - 14px);font-size:24px;text-shadow:0 1px 4px rgba(0,0,0,.5);pointer-events:none}
+.tile .x{position:absolute;top:-8px;right:-8px;width:24px;height:24px;border:0;border-radius:50%;background:var(--c1);color:#5a4a62;font-size:12px;cursor:pointer}
+.add{display:inline-block;margin-top:6px;background:var(--c2);border-radius:99px;padding:7px 16px;font-size:13px;cursor:pointer;font-weight:600}
+.add.off{opacity:.45;pointer-events:none}
+.st{font-size:12px;color:var(--soft);min-height:16px;margin-top:4px}
+footer{text-align:center;padding:10px 20px 40px;color:var(--soft);font-size:14px}
+.lb{position:fixed;inset:0;z-index:20;background:rgba(30,20,36,.88);display:none;align-items:center;justify-content:center;padding:16px}
+.lb.on{display:flex}.lb img,.lb video{max-width:100%;max-height:88vh;border-radius:10px}
+.lb button{position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);right:14px;border:0;border-radius:50%;width:38px;height:38px;font-size:18px;cursor:pointer}
+.cbtn{margin-left:auto;flex:none;border:0;border-radius:99px;padding:7px 13px;background:var(--card);color:var(--ink);font:inherit;font-size:12px;font-weight:600;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.08)}
+.favs{display:none;background:var(--card);border-radius:20px;padding:10px 12px;margin:0 0 6px}
+.ft{font-size:13px;font-weight:600;margin-bottom:6px}
+.frow{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.frow img,.frow video{flex:none;width:84px;height:84px;object-fit:cover;border-radius:10px;cursor:pointer;border:2px solid var(--gold)}
+.col{display:none;background:var(--card);border-radius:20px;padding:12px;margin:10px 0;text-align:center;font-size:13px}
+.col canvas{max-width:100%;height:auto;border-radius:12px}
+.col .cb{margin:10px 6px 0;border:0;border-radius:99px;padding:7px 16px;background:var(--c2);color:var(--ink);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.star{position:absolute;top:9px;left:9px;border:0;border-radius:99px;padding:1px 7px;font-size:12px;background:rgba(255,255,255,.85);color:#5a4a62;cursor:pointer}
+.star.on{background:#fff1c4}
+.pdel{display:none;margin-left:auto;flex:none;border:0;background:none;font-size:15px;cursor:pointer;padding:0 2px;color:var(--soft);font-family:inherit}
+.opt+.pdel{margin-left:6px}
+body.can .pdel{display:block}
+.padd{display:none;margin:8px 0 4px}
+body.can .padd{display:block}
+.pa{border:2px dashed var(--soft);background:var(--card);color:var(--ink);border-radius:99px;padding:7px 16px;font:inherit;font-size:13px;cursor:pointer}
+.pf{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.pf[hidden]{display:none}
+.pf input{border:1px solid var(--soft);border-radius:12px;padding:7px 10px;font:inherit;font-size:13px;background:var(--card);color:var(--ink);min-width:0}
+.pf .pi{width:54px;text-align:center}.pf .pn,.pf .ps{flex:1 1 140px}
+.pgo{border:0;border-radius:99px;padding:7px 16px;background:var(--c2);color:var(--ink);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.cb2{border:0;background:none;color:var(--soft);text-decoration:underline;font:inherit;font-size:12px;cursor:pointer;margin-top:6px}
+</style>
+</head>
+<body>
+<header class="hero">
+<svg viewBox="0 0 120 90" aria-hidden="true"><g fill="var(--card)" stroke="var(--gold)" stroke-width="2" stroke-linejoin="round"><path d="M60 4 66 26 54 26Z"/><path d="M60 22 74 50 46 50Z"/><path d="M60 44 84 78 36 78Z"/><rect x="26" y="78" width="68" height="9" rx="3"/></g></svg>
+<div class="th">สวัสดี · Sawasdee</div>
+<h1>Our Thailand Scrapbook</h1>
+<p>Pattaya &amp; Bangkok · 3–8 December 2026</p>
+<div class="chips"><span class="chip">👥 3 travellers</span><span class="chip">🌙 5 nights</span><span class="chip" id="cnt">📸 0 memories</span></div>
+<div class="lotus">🪷 ✿ 🪷 ✿ 🪷</div>
+</header>
+<div id="banner" class="banner" style="display:none"></div>
+<nav id="nav"></nav>
+<main id="days"></main>
+<footer>ขอบคุณ · Thank you, Thailand 🌴<br>Tap ＋ under any place to add your photos &amp; videos<br><button id="restore" class="cb2" style="display:none">↩ Restore removed places</button></footer>
+<div class="lb" id="lb"><button id="lbx" aria-label="Close">✕</button><div id="lbc"></div></div>
+<!-- build v5: favourites, collage, add/delete places -->
+<script src="config.js?v=5"></script>
+<script src="shim.js?v=5"></script>
+<script>
+const DAYS=[
+{d:3,t:'Bangkok Arrival → Pattaya',c:'--c1',p:[
+['d1a','🛬','Suvarnabhumi Airport','08:00 AM pickup · Welcome to Thailand'],
+['d1b','🐯','Tiger Topia','Breakfast & show'],
+['d1c','🏨','Pattaya Hotel Check-in','Settling in'],
+['d1d','💃','Alcazar Show','Evening cabaret · Normal seat'],
+['d1e','🎨','Art in Paradise','฿420 per person incl. transfers',1]]},
+{d:4,t:'Pattaya City Tour',c:'--c2',p:[
+['d2a','🛶','Floating Market','Boats, snacks & souvenirs'],
+['d2b','🙏','Mountain Buddha (Khao Chi Chan)','Viewing only'],
+['d2c','🌳','Nong Nooch Tropical Garden','Garden entry, sightseeing bus & lunch'],
+['d2d','🐘','Thai Cultural & Elephant Show','Nong Nooch']]},
+{d:5,t:'Pattaya → Bangkok',c:'--c3',p:[
+['d3a','💎','Gems Gallery','Sparkly stop'],
+['d3b','🏛️','Sanctuary of Truth','Carved wooden wonder'],
+['d3c','🙏','Golden Buddha','Viewing only'],
+['d3d','⛩️','Wat Arun','Temple of Dawn · Viewing only'],
+['d3e','🚢','Chao Phraya Princess Dinner Cruise','Evening on the river'],
+['d3f','🏨','Bangkok Hotel Check-in','Night in the city']]},
+{d:6,t:'Safari World',c:'--c4',p:[
+['d4a','🦒','Safari World','Drive-through safari · Lunch included'],
+['d4b','🐬','Marine Park','Shows & splashes']]},
+{d:7,t:'Free &amp; Leisure',c:'--c5',p:[
+['d5a','🛍️','Shopping &amp; Wandering','Markets, malls & hidden corners'],
+['d5b','🍜','Food Finds &amp; Chill Time','Whatever the day brings']]},
+{d:8,t:'Departure',c:'--c6',p:[
+['d6a','🧳','Hotel Check-out','Goodbye Bangkok hotel'],
+['d6b','✈️','Suvarnabhumi Airport','06:00 AM private transfer · See you soon, Thailand']]}
+];
+const $=s=>document.querySelector(s);
+let dl=null,db=null,assets=null,user=null,me=null,mem=[],names={};
+let cust=[],hid=new Set(),sig='',canAdd=false;DAYS.forEach(D=>D.base=D.p);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function build(){
+DAYS.forEach((D,i)=>D.p=D.base.filter(p=>!hid.has(p[0])).concat(cust.filter(c=>c.day===i).map(c=>[c.id,esc(c.e||'📍'),esc(c.t),esc(c.s||''),0])));
+let h='',nv='';
+DAYS.forEach((D,i)=>{
+ nv+=`<button style="background:var(${D.c})" data-d="${i}">Day ${i+1}</button>`;
+ h+=`<section class="day" id="day${i}" style="--dc:var(${D.c})"><div class="dh"><div class="dn"><small>DEC</small><b>${D.d}</b></div><div><h2>Day ${i+1} · ${D.t}</h2><p id="dc${i}"></p></div><button class="cbtn" data-c="${i}">🎀 Collage</button></div><div class="favs" id="f${i}"></div><div class="col" id="col${i}"></div>`;
+ D.p.forEach(p=>{h+=`<div class="place" id="p-${p[0]}"><div class="ph"><span class="pe">${p[1]}</span><div><h3>${p[2]}</h3><p>${p[3]}</p></div>${p[4]?'<span class="opt">Optional</span>':''}<button class="pdel" data-del="${p[0]}" title="Remove this place">🗑</button></div><div class="grid" id="g-${p[0]}"></div><label class="add off">＋ Add photos &amp; videos<input type="file" multiple accept="image/*,video/*" hidden data-p="${p[0]}"></label><div class="st" id="s-${p[0]}"></div></div>`});
+ h+=`<div class="padd"><button class="pa" data-a="${i}">＋ Add a place</button><div class="pf" id="pf${i}" hidden><input class="pi" maxlength="4" value="📍" aria-label="Emoji"><input class="pn" maxlength="60" placeholder="Place name" aria-label="Place name"><input class="ps" maxlength="80" placeholder="Note (optional)" aria-label="Note"><button class="pgo" data-a="${i}">Add</button></div></div></section>`;
+});
+$('#nav').innerHTML=nv;$('#days').innerHTML=h;applyPerms();
+}
+build();
+$('#nav').addEventListener('click',e=>{const b=e.target.closest('button');if(b)$('#day'+b.dataset.d).scrollIntoView({behavior:'smooth'})});
+const rid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const src=id=>window.blobUrl?window.blobUrl(id):'/_blob/'+id;
+function openLb(m){const c=$('#lbc');c.textContent='';const e=document.createElement(m.kind==='video'?'video':'img');e.src=src(m.asset);if(m.kind==='video'){e.controls=true;e.playsInline=true;e.autoplay=true}c.appendChild(e);$('#lb').classList.add('on')}
+function closeLb(){$('#lb').classList.remove('on');$('#lbc').textContent=''}
+$('#lb').addEventListener('click',e=>{if(e.target.id==='lb'||e.target.id==='lbx')closeLb()});
+function render(){
+ DAYS.forEach((D,i)=>{let n=0;
+  D.p.forEach(p=>{
+   const g=$('#g-'+p[0]);g.textContent='';
+   const ms=mem.filter(m=>m.place===p[0]);n+=ms.length;
+   if(!ms.length){const e=document.createElement('div');e.className='empty';e.textContent='No memories yet — be the first ✨';g.appendChild(e)}
+   ms.forEach(m=>{
+    const t=document.createElement('div');t.className='tile';t.style.setProperty('--r',((parseInt(m.id.slice(-3),36)%7)-3)+'deg');
+    const el=document.createElement(m.kind==='video'?'video':'img');el.className='m';
+    if(m.kind==='video'){el.src=src(m.asset)+'#t=0.1';el.preload='metadata';el.muted=true;el.playsInline=true}else{el.src=src(m.asset);el.loading='lazy';el.alt=''}
+    t.appendChild(el);
+    if(m.kind==='video'){const pl=document.createElement('span');pl.className='play';pl.textContent='▶️';t.appendChild(pl)}
+    const by=document.createElement('span');by.className='by';by.textContent=names[m.by]||'';by.dataset.u=m.by||'';t.appendChild(by);
+    const fv=m.favs||[];const mine=me&&fv.includes(me);
+    const s=document.createElement('button');s.className='star'+(fv.length?' on':'');s.textContent=(mine?'⭐':'☆')+(fv.length?' '+fv.length:'');s.title='Favourite moment';
+    s.addEventListener('click',ev=>{ev.stopPropagation();toggleFav(m)});t.appendChild(s);
+    if(me&&m.by===me){const x=document.createElement('button');x.className='x';x.textContent='✕';x.title='Remove';
+     x.addEventListener('click',ev=>{ev.stopPropagation();if(x.dataset.sure){db.collection('memories').doc(m.id).delete().catch(()=>{})}else{x.dataset.sure=1;x.textContent='?';setTimeout(()=>{x.dataset.sure='';x.textContent='✕'},3000)}});t.appendChild(x)}
+    t.addEventListener('click',()=>openLb(m));g.appendChild(t);
+   });
+  });
+  renderFavs(i);$('#dc'+i).textContent=n?`📸 ${n} memor${n>1?'ies':'y'}`:'Nothing added yet';
+ });
+ $('#cnt').textContent='📸 '+mem.length+(mem.length===1?' memory':' memories');
+ resolveNames();
+}
+async function resolveNames(){
+ if(!user)return;
+ const ids=[...new Set(mem.map(m=>m.by).filter(Boolean))].filter(i=>!names[i]);
+ if(!ids.length)return;
+ try{const ps=await user.profiles(ids);ids.forEach(i=>{names[i]=(ps[i]&&ps[i].name)||'Traveller'});
+  document.querySelectorAll('.by').forEach(b=>{if(names[b.dataset.u])b.textContent=names[b.dataset.u]})}catch(e){}
+}
+async function addFiles(pid,files){
+ const st=$('#s-'+pid);let i=0;
+ for(const f of files){
+  i++;st.textContent=`Uploading ${i} of ${files.length}…`;
+  try{
+   const r=await assets.upload(f);
+   await db.collection('memories').doc(rid()).set({place:pid,asset:r.id,kind:f.type.startsWith('video')?'video':'image',by:me,ts:Date.now()});
+  }catch(e){st.textContent='Couldn’t add '+f.name+' (files must be under 50 MB).';return}
+ }
+ st.textContent='Added ✨';setTimeout(()=>{st.textContent=''},2500);
+}
+document.addEventListener('change',e=>{const inp=e.target;if(inp.type==='file'&&inp.dataset.p){const fs=[...inp.files];inp.value='';if(fs.length)addFiles(inp.dataset.p,fs)}});
+async function toggleFav(m){
+ if(!db||!me){banner('Ask the trip owner for Contributor access to star favourite moments.');return}
+ const fv=new Set(m.favs||[]);fv.has(me)?fv.delete(me):fv.add(me);
+ try{await db.collection('memories').doc(m.id).update({favs:[...fv]})}catch(e){}
+}
+function dayMem(i){const ids=new Set(DAYS[i].p.map(p=>p[0]));return mem.filter(m=>ids.has(m.place))}
+function renderFavs(i){
+ const f=$('#f'+i);f.textContent='';
+ const fs=dayMem(i).filter(m=>(m.favs||[]).length).sort((a,b)=>b.favs.length-a.favs.length);
+ if(!fs.length){f.style.display='none';return}
+ f.style.display='block';
+ const t=document.createElement('div');t.className='ft';t.textContent='⭐ Favourite moments';f.appendChild(t);
+ const row=document.createElement('div');row.className='frow';
+ fs.forEach(m=>{const v=m.kind==='video';const el=document.createElement(v?'video':'img');el.src=src(m.asset)+(v?'#t=0.1':'');if(v){el.muted=true;el.playsInline=true;el.preload='metadata'}else el.alt='';el.addEventListener('click',()=>openLb(m));row.appendChild(el)});
+ f.appendChild(row);
+}
+const loadImg=u=>new Promise((res,rej)=>{const im=new Image();im.onload=()=>res(im);im.onerror=rej;im.src=u});
+const PAL=['#ffd9e2','#d6f2e5','#e6dcf8','#fff1c4','#ffdfc8','#d5e9f8'];
+async function makeCollage(i){
+ const box=$('#col'+i);box.style.display='block';box.textContent='Making your collage… 🎀';
+ const D=DAYS[i];const imgs=dayMem(i).filter(m=>m.kind!=='video');
+ if(!imgs.length){box.textContent='Add a few photos to this day first, then make the collage ✨';return}
+ const pick=[...imgs.filter(m=>(m.favs||[]).length),...imgs.filter(m=>!(m.favs||[]).length)].slice(0,9);
+ try{
+  try{await document.fonts.load('700 54px Mali')}catch(e){}
+  const ims=await Promise.all(pick.map(m=>loadImg(src(m.asset))));
+  const W=1080,n=pick.length,cols=n<=1?1:n<=4?2:3,rows=Math.ceil(n/cols),pad=44,gap=30;
+  const cw=(W-pad*2-gap*(cols-1))/cols,ch=cw+50,top=210,H=top+rows*ch+(rows-1)*gap+100;
+  const cv=document.createElement('canvas');cv.width=W;cv.height=H;const x=cv.getContext('2d');
+  x.fillStyle=PAL[i];x.fillRect(0,0,W,H);
+  x.fillStyle='rgba(255,255,255,.35)';[[90,90,60],[980,150,80],[60,H-80,70],[1000,H-60,50]].forEach(c=>{x.beginPath();x.arc(c[0],c[1],c[2],0,7);x.fill()});
+  x.textAlign='center';x.fillStyle='#4a3b52';
+  x.font="700 56px Mali,'Segoe UI',sans-serif";x.fillText('Day '+(i+1)+' · '+D.t.replace(/&amp;/g,'&'),W/2,100,W-100);
+  x.font="400 30px Mali,'Segoe UI',sans-serif";x.fillText('Thailand · '+D.d+' December 2026',W/2,150);
+  x.fillText('🪷 ✿ 🪷 ✿ 🪷',W/2,195);
+  pick.forEach((m,k)=>{
+   const r=Math.floor(k/cols),c=k%cols,cnt=Math.min(cols,n-r*cols),off=(cols-cnt)*(cw+gap)/2;
+   const cx=pad+off+c*(cw+gap)+cw/2,cy=top+r*(ch+gap)+ch/2;
+   x.save();x.translate(cx,cy);x.rotate(((parseInt(m.id.slice(-3),36)%7)-3)*0.02);
+   x.shadowColor='rgba(0,0,0,.25)';x.shadowBlur=14;x.shadowOffsetY=5;x.fillStyle='#fff';x.fillRect(-cw/2,-ch/2,cw,ch);
+   x.shadowColor='transparent';const im=ims[k],sw=Math.min(im.width,im.height),s=cw-24;
+   x.drawImage(im,(im.width-sw)/2,(im.height-sw)/2,sw,sw,-cw/2+12,-ch/2+12,s,s);
+   if((m.favs||[]).length){x.font='40px sans-serif';x.fillText('⭐',cw/2-34,-ch/2+54)}
+   x.restore();
+  });
+  x.fillStyle='#4a3b52';x.font="400 28px Mali,'Segoe UI',sans-serif";x.fillText('ขอบคุณ · Thank you, Thailand 🌴',W/2,H-38);
+  box.textContent='';box.appendChild(cv);
+  const bar=document.createElement('div');
+  if(dl){const sv=document.createElement('button');sv.className='cb';sv.textContent='💾 Save collage';
+   sv.addEventListener('click',()=>{cv.toBlob(b=>{if(b)dl.save({filename:'thailand-day'+(i+1)+'-collage.png',data:b}).catch(()=>{})},'image/png')});bar.appendChild(sv)}
+  const cl=document.createElement('button');cl.className='cb';cl.textContent='Close';cl.addEventListener('click',()=>{box.style.display='none';box.textContent=''});bar.appendChild(cl);
+  box.appendChild(bar);
+ }catch(e){box.textContent='Couldn’t build the collage this time. Please try again.'}
+}
+document.addEventListener('click',e=>{const b=e.target.closest('.cbtn');if(b)makeCollage(+b.dataset.c)});
+function applyPerms(){document.body.classList.toggle('can',canAdd);document.querySelectorAll('.add').forEach(a=>a.classList.toggle('off',!canAdd))}
+function rebuild(){$('#restore').style.display=hid.size?'inline':'none';const s=JSON.stringify([cust.map(c=>c.id),[...hid]]);if(s===sig)return;sig=s;build();render()}
+document.addEventListener('click',e=>{
+ const pa=e.target.closest('.pa');if(pa){const f=$('#pf'+pa.dataset.a);f.hidden=!f.hidden;return}
+ const go=e.target.closest('.pgo');if(go){addPlace(+go.dataset.a);return}
+ const pd=e.target.closest('.pdel');if(pd){if(pd.dataset.sure){delPlace(pd.dataset.del)}else{pd.dataset.sure=1;pd.textContent='Sure?';setTimeout(()=>{pd.dataset.sure='';pd.textContent='🗑'},3000)}return}
+ if(e.target.closest('#restore')&&db)hid.forEach(id=>db.collection('hidden').doc(id).delete().catch(()=>{}));
+});
+async function addPlace(i){
+ const f=$('#pf'+i),t=f.querySelector('.pn').value.trim();if(!t||!db)return;
+ try{await db.collection('places').doc('c_'+rid()).set({day:i,e:f.querySelector('.pi').value.trim()||'📍',t,s:f.querySelector('.ps').value.trim(),ts:Date.now()});f.querySelector('.pn').value='';f.querySelector('.ps').value='';f.hidden=true}catch(e){banner('Couldn’t add the place — you may need Contributor access.')}
+}
+function delPlace(id){if(!db)return;(id.startsWith('c_')?db.collection('places').doc(id).delete():db.collection('hidden').doc(id).set({ts:Date.now()})).catch(()=>{})}
+function banner(t){const b=$('#banner');b.textContent=t;b.style.display=t?'block':'none'}
+(async()=>{
+ render();
+ if(!window.claude){banner('Storage isn’t connected. On GitHub, make sure shim.js and config.js are uploaded next to index.html and config.js has your Supabase details.');return}
+ try{user=await claude.use('user');if(user)me=await user.id()}catch(e){}
+ try{assets=await claude.use('assets')}catch(e){}
+ try{db=await claude.use('db')}catch(e){}
+ try{dl=await claude.use('downloads')}catch(e){}
+ if(!db){banner('Sign in to Claude to see the shared memories.');return}
+ if(assets&&me){canAdd=true;applyPerms()}
+ else banner('👀 View-only for now — ask the trip owner for Contributor access to add photos & videos.');
+ try{db.collection('places').onSnapshot(s=>{cust=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.ts||0)-(b.ts||0));rebuild()},()=>{})}catch(e){}
+ try{db.collection('hidden').onSnapshot(s=>{hid=new Set(s.docs.map(d=>d.id));rebuild()},()=>{})}catch(e){}
+ try{db.collection('memories').onSnapshot(s=>{mem=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.ts||0)-(b.ts||0));render()},()=>banner('Couldn’t load memories. Please refresh.'))}catch(e){}
+})();
+</script>
+</body>
+</html>
