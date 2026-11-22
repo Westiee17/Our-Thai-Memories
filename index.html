@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Thailand Trip Scrapbook 2026</title>
+<meta name="color-scheme" content="light only">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600;700&display=swap">
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 --bg:#fff8f3;--ink:#4a3b52;--soft:#8a7894;--card:#fffdfb;--gold:#e0a85a;
 --c1:#ffd9e2;--c2:#d6f2e5;--c3:#e6dcf8;--c4:#fff1c4;--c5:#ffdfc8;--c6:#d5e9f8;color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#231b2a;--ink:#f4e9f6;--soft:#b5a3bf;--card:#33283c;--gold:#e8b86d;
+@media not all{:root:not([data-theme="light"]){--bg:#231b2a;--ink:#f4e9f6;--soft:#b5a3bf;--card:#33283c;--gold:#e8b86d;
 --c1:#5b3446;--c2:#2f5143;--c3:#443a63;--c4:#5c5230;--c5:#5e4331;--c6:#2f4a62;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#231b2a;--ink:#f4e9f6;--soft:#b5a3bf;--card:#33283c;--gold:#e8b86d;--c1:#5b3446;--c2:#2f5143;--c3:#443a63;--c4:#5c5230;--c5:#5e4331;--c6:#2f4a62;color-scheme:dark}
 *,*::before,*::after{box-sizing:inherit}
@@ -82,7 +83,7 @@ body.can .padd{display:block}
 <div class="th">สวัสดี · Sawasdee</div>
 <h1>Our Thailand Scrapbook</h1>
 <p>Pattaya &amp; Bangkok · 3–8 December 2026</p>
-<div class="chips"><span class="chip">👥 3 travellers</span><span class="chip">🌙 5 nights</span><span class="chip" id="cnt">📸 0 memories</span></div>
+<div class="chips"><span class="chip">👥 4 travellers</span><span class="chip">🌙 5 nights</span><span class="chip" id="cnt">📸 0 memories</span></div>
 <div class="lotus">🪷 ✿ 🪷 ✿ 🪷</div>
 </header>
 <div id="banner" class="banner" style="display:none"></div>
@@ -90,13 +91,14 @@ body.can .padd{display:block}
 <main id="days"></main>
 <footer>ขอบคุณ · Thank you, Thailand 🌴<br>Tap ＋ under any place to add your photos &amp; videos<br><button id="restore" class="cb2" style="display:none">↩ Restore removed places</button></footer>
 <div class="lb" id="lb"><button id="lbx" aria-label="Close">✕</button><div id="lbc"></div></div>
-<!-- build v5: favourites, collage, add/delete places -->
-<script src="config.js?v=5"></script>
-<script src="shim.js?v=5"></script>
+<!-- build v8: favourites, collage, add/delete places -->
+<script src="config.js?v=8"></script>
+<script src="shim.js?v=8"></script>
 <script>
 const DAYS=[
 {d:3,t:'Bangkok Arrival → Pattaya',c:'--c1',p:[
-['d1a','🛬','Suvarnabhumi Airport','08:00 AM pickup · Welcome to Thailand'],
+['d1z','🛫','Departure from Bengaluru International Airport','02:00 AM · 3 December · Where the adventure begins'],
+['d1a','🛬','Arrival at Suvarnabhumi Airport','08:00 AM pickup · Welcome to Thailand'],
 ['d1b','🐯','Tiger Topia','Breakfast & show'],
 ['d1c','🏨','Pattaya Hotel Check-in','Settling in'],
 ['d1d','💃','Alcazar Show','Evening cabaret · Normal seat'],
