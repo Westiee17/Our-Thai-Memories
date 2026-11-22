@@ -11,7 +11,11 @@
   }
   const H = C.key && C.key.startsWith('eyJ') ? { apikey: C.key, Authorization: 'Bearer ' + C.key } : { apikey: C.key };
   const R = C.url + '/rest/v1/docs';
-  const J = (m, u, b, x) => fetch(u, { method: m, headers: { ...H, 'Content-Type': 'application/json', ...x }, body: b ? JSON.stringify(b) : undefined });
+  const J = async (m, u, b, x) => {
+    const r = await fetch(u, { method: m, headers: { ...H, 'Content-Type': 'application/json', ...x }, body: b ? JSON.stringify(b) : undefined });
+    if (!r.ok) { let t = ''; try { const j = await r.json(); t = j.message || j.hint || ''; } catch (e) {} throw new Error(r.status + ' ' + t); }
+    return r;
+  };
   const q = c => `?coll=eq.${encodeURIComponent(c)}&select=id,data`;
   const ping = () => window.dispatchEvent(new Event('trip-write'));
   window.blobUrl = p => C.url + '/storage/v1/object/public/media/' + p;

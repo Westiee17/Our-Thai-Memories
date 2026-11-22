@@ -185,7 +185,7 @@ async function addFiles(pid,files){
   try{
    const r=await assets.upload(f);
    await db.collection('memories').doc(rid()).set({place:pid,asset:r.id,kind:f.type.startsWith('video')?'video':'image',by:me,ts:Date.now()});
-  }catch(e){st.textContent='Couldn’t add '+f.name+' (files must be under 50 MB).';return}
+  }catch(e){st.textContent='Couldn’t add '+f.name+': '+((e&&e.message)||'error');return}
  }
  st.textContent='Added ✨';setTimeout(()=>{st.textContent=''},2500);
 }
@@ -271,7 +271,7 @@ function banner(t){const b=$('#banner');b.textContent=t;b.style.display=t?'block
  else banner('👀 View-only for now — ask the trip owner for Contributor access to add photos & videos.');
  try{db.collection('places').onSnapshot(s=>{cust=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.ts||0)-(b.ts||0));rebuild()},()=>{})}catch(e){}
  try{db.collection('hidden').onSnapshot(s=>{hid=new Set(s.docs.map(d=>d.id));rebuild()},()=>{})}catch(e){}
- try{db.collection('memories').onSnapshot(s=>{mem=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.ts||0)-(b.ts||0));render()},()=>banner('Couldn’t load memories. Please refresh.'))}catch(e){}
+ try{db.collection('memories').onSnapshot(s=>{mem=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.ts||0)-(b.ts||0));render()},er=>banner('Couldn’t load memories: '+((er&&er.message)||'unknown error')))}catch(e){}
 })();
 </script>
 </body>
